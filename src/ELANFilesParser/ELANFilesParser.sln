@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1022
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELANFilesParser", "ELANFilesParser\ELANFilesParser.csproj", "{3949A88F-5724-4C5B-900E-DB010FD08078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELANFilesParseLibrary", "ELANFilesParseLibrary\ELANFilesParseLibrary.csproj", "{AF5F0939-950C-4282-88D4-5EE0F80375E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELANToDatabase", "DataAccessLevel\ELANToDatabase.csproj", "{9B9FD5D4-8CEC-4559-A3FE-B1C3409D9E50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3949A88F-5724-4C5B-900E-DB010FD08078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3949A88F-5724-4C5B-900E-DB010FD08078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3949A88F-5724-4C5B-900E-DB010FD08078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3949A88F-5724-4C5B-900E-DB010FD08078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5F0939-950C-4282-88D4-5EE0F80375E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5F0939-950C-4282-88D4-5EE0F80375E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5F0939-950C-4282-88D4-5EE0F80375E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5F0939-950C-4282-88D4-5EE0F80375E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9FD5D4-8CEC-4559-A3FE-B1C3409D9E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9FD5D4-8CEC-4559-A3FE-B1C3409D9E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9FD5D4-8CEC-4559-A3FE-B1C3409D9E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9FD5D4-8CEC-4559-A3FE-B1C3409D9E50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21A701EE-9173-4DCE-A686-0FC077BA7927}
+	EndGlobalSection
+EndGlobal
