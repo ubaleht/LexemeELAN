@@ -17,7 +17,6 @@ namespace ELANFilesParseLibrary
         private List<string> associationTierIdList = new List<string>() { "//TIER[@TIER_ID='Speaker-WordsEnTranslation']", "//TIER[@TIER_ID='Speaker-WordsRuTranslation']",
             "//TIER[@TIER_ID='Speaker-SpeechEnTranslation']", "//TIER[@TIER_ID='Speaker-SpeechRuTranslation']", "//TIER[@TIER_ID='Interviewer-SpeechEnTranslation']",
             "//TIER[@TIER_ID='Speaker-WordsComments']", "//TIER[@TIER_ID='Speaker-SpeechLanguage']", "//TIER[@TIER_ID='Speaker-PartOfSpeech']" };
-        //private XDocument document;
 
         private Dictionary<string, List<TimeRangeNode>> timeRangeTiersDict = new Dictionary<string, List<TimeRangeNode>>();
         private Dictionary<string, List<AssociationNode>> associationTiersDict = new Dictionary<string, List<AssociationNode>>();
@@ -36,8 +35,6 @@ namespace ELANFilesParseLibrary
         public void ParseOld()
         {
             string text = System.IO.File.ReadAllText(@"D:\Proj\Under-ResourcedLanguages\SIF\SiberianIngrianFinnish\annotations\KKM-34-003.eaf");
-            //document = XDocument.Parse(text, LoadOptions.PreserveWhitespace);
-            //XElement e1 = document.
 
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(text);
@@ -50,8 +47,6 @@ namespace ELANFilesParseLibrary
             XmlNodeList annotationNodes = tierNode.SelectNodes("//ANNOTATION");
             foreach (XmlNode node in tierNode.ChildNodes)
             {
-                //XmlNodeList nodes1 = node.ChildNodes;
-                //string annotationValue = node.SelectSingleNode("//ANNOTATION_VALUE").InnerText;
                 string s1 = node.InnerXml;
                 XmlDocument doc1 = new XmlDocument();
                 doc1.LoadXml(s1);
@@ -59,10 +54,6 @@ namespace ELANFilesParseLibrary
                 list2.Add(doc1.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["TIME_SLOT_REF1"].Value);
                 list3.Add(doc1.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["TIME_SLOT_REF2"].Value);
                 list4.Add(doc1.SelectSingleNode("//ANNOTATION_VALUE").InnerText);
-                //list1.Add(node.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["ANNOTATION_ID"].Value);
-                //string s2 = node.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["TIME_SLOT_REF1"].Value;
-                //string s3 = node.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["TIME_SLOT_REF2"].Value;
-                //atrs.GetNamedItem("//").InnerText
             }
         }
 
@@ -84,7 +75,6 @@ namespace ELANFilesParseLibrary
                 List<TimeRangeNode> timeRangeNodes = new List<TimeRangeNode>();
 
                 XmlNode tierNode = fullXmlDocument.SelectSingleNode(tierId);
-                //XmlNodeList annotationNodes = tierNode.SelectNodes("//ANNOTATION");
                 
                 foreach (XmlNode node in tierNode.ChildNodes)
                 {
@@ -111,7 +101,6 @@ namespace ELANFilesParseLibrary
                 List<AssociationNode> associationNodes = new List<AssociationNode>();
 
                 XmlNode tierNode = fullXmlDocument.SelectSingleNode(tierId);
-                //XmlNodeList annotationNodes = tierNode.SelectNodes("//ANNOTATION");
 
                 foreach (XmlNode node in tierNode.ChildNodes)
                 {
@@ -132,10 +121,6 @@ namespace ELANFilesParseLibrary
 
         private void TimeOrderSectionParse(XmlDocument fullXmlDocument)
         {
-            //timeOrderSectionDict.Add("", "");
-            //string s = timeOrderSectionDict[""];
-            //string s2 = timeOrderSectionDict.FirstOrDefault(x => x.Value == "").Key;
-
             XmlNode timeOrderSection = fullXmlDocument.SelectSingleNode("//TIME_ORDER");
 
             foreach (XmlNode node in timeOrderSection.SelectNodes("//TIME_SLOT"))
