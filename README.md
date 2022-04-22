@@ -1,4 +1,4 @@
-# ELAN
+# Lexeme ELAN Parser
 Tools for processing ELAN annotation files.
 
 At this moment, this project consists of the following tools:
