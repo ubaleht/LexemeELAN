@@ -32,31 +32,6 @@ namespace ELANFilesParseLibrary
             this.filePath = filePath;
         }
 
-        public void ParseOld()
-        {
-            string text = System.IO.File.ReadAllText(@"D:\Proj\Under-ResourcedLanguages\SIF\SiberianIngrianFinnish\annotations\KKM-34-003.eaf");
-
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(text);
-            XmlNode tierNode = doc.SelectSingleNode("//TIER[@TIER_ID='General']");
-            List<string> list1 = new List<string>();
-            List<string> list2 = new List<string>();
-            List<string> list3 = new List<string>();
-            List<string> list4 = new List<string>();
-            
-            XmlNodeList annotationNodes = tierNode.SelectNodes("//ANNOTATION");
-            foreach (XmlNode node in tierNode.ChildNodes)
-            {
-                string s1 = node.InnerXml;
-                XmlDocument doc1 = new XmlDocument();
-                doc1.LoadXml(s1);
-                list1.Add(doc1.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["ANNOTATION_ID"].Value);
-                list2.Add(doc1.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["TIME_SLOT_REF1"].Value);
-                list3.Add(doc1.SelectSingleNode("//ALIGNABLE_ANNOTATION").Attributes["TIME_SLOT_REF2"].Value);
-                list4.Add(doc1.SelectSingleNode("//ANNOTATION_VALUE").InnerText);
-            }
-        }
-
         public void Parse()
         {
             fullXmlText = System.IO.File.ReadAllText(filePath);
@@ -134,25 +109,12 @@ namespace ELANFilesParseLibrary
             foreach (TimeRangeNode generalTierNode in timeRangeTiersDict["General"])
             {
                 List<string> generalTireKeys = timeOrderSectionDict.Where(x => x.Value >= timeOrderSectionDict[generalTierNode.TimeSlotRef1] && x.Value <= timeOrderSectionDict[generalTierNode.TimeSlotRef2]).Select(x => x.Key).ToList();
-                /*
-                foreach (int currentGeneralTimeSlot in timeOrderSectionDict.Values)
-                {
-                    if (currentGeneralTimeSlot >= timeOrderSectionDict[generalTierNode.TimeSlotRef1] && currentGeneralTimeSlot <= timeOrderSectionDict[generalTierNode.TimeSlotRef2])
-                    {
-
-                    }
-                }
-                */
-
-                //string interviewerSpeechTierNodeId = String.Empty;
                 List<string> interviewerSpeechTierNodeIdList = new List<string>();
 
                 foreach (TimeRangeNode interviewerSpeechTierNode in timeRangeTiersDict["Interviewer-Speech"])
                 {
                     if (generalTireKeys.Contains(interviewerSpeechTierNode.TimeSlotRef1) && generalTireKeys.Contains(interviewerSpeechTierNode.TimeSlotRef2))
                     {
-                        //interviewerSpeechTierNodeId = interviewerSpeechTierNode.AnnotationId;
-                        //if(!interviewerSpeechTierNodeIdList.Contains(key))
                             interviewerSpeechTierNodeIdList.Add(interviewerSpeechTierNode.AnnotationId);
                     }
                 }
