@@ -14,8 +14,9 @@ namespace ELANFilesParseLibrary
         private string speakerWordsEnTranslation;
         private string speakerWordsRuTranslation;
         private string speakerWordsComments;
-        private string speakerSpeechLanguage;
+        private string speakerWordsLanguage;
         private string speakerPartOfSpeech;
+        private string speakerMorphology;
 
         public SpeakerWord() { }
 
@@ -25,7 +26,8 @@ namespace ELANFilesParseLibrary
         public string SpeakerWordsEnTranslation { get => speakerWordsEnTranslation; set => speakerWordsEnTranslation = value; }
         public string SpeakerWordsRuTranslation { get => speakerWordsRuTranslation; set => speakerWordsRuTranslation = value; }
         public string SpeakerWordsComments { get => speakerWordsComments; set => speakerWordsComments = value; }
-        public string SpeakerSpeechLanguage { get => speakerSpeechLanguage; set => speakerSpeechLanguage = value; }
+        public string SpeakerWordsLanguage { get => speakerWordsLanguage; set => speakerWordsLanguage = value; }
         public string SpeakerPartOfSpeech { get => speakerPartOfSpeech; set => speakerPartOfSpeech = value; }
+        public string SpeakerMorphology { get => speakerMorphology; set => speakerMorphology = value; }
     }
 }

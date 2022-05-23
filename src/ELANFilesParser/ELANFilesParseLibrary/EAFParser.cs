@@ -167,7 +167,7 @@ namespace ELANFilesParseLibrary
                                 StartTime = timeOrderSectionDict[speakerSpeechTierCurrentNode.TimeSlotRef1],
                                 EndTime = timeOrderSectionDict[speakerSpeechTierCurrentNode.TimeSlotRef2],
                                 SpeakerSpeechEnTranslation = (speakerSpeechEnTranslationTierNode != null) ? speakerSpeechEnTranslationTierNode.AnnotationValue : String.Empty,
-                                SpeakerSpeechRuTranslation = (speakerSpeechRuTranslationTierNode != null) ? speakerSpeechEnTranslationTierNode.AnnotationValue : String.Empty
+                                SpeakerSpeechRuTranslation = (speakerSpeechRuTranslationTierNode != null) ? speakerSpeechRuTranslationTierNode.AnnotationValue : String.Empty
                             }
                         );
                     }
@@ -198,6 +198,7 @@ namespace ELANFilesParseLibrary
                             AssociationNode speakerWordsEnTranslationTierNode = associationTiersDict["Speaker-WordsEnTranslation"].Where(x => x.AnnotationRef == speakerWordsTierCurrentNode.AnnotationId).FirstOrDefault();
                             AssociationNode speakerWordsRuTranslationTierNode = associationTiersDict["Speaker-WordsRuTranslation"].Where(x => x.AnnotationRef == speakerWordsTierCurrentNode.AnnotationId).FirstOrDefault();
                             AssociationNode speakerWordsComments = associationTiersDict["Speaker-WordsComments"].Where(x => x.AnnotationRef == speakerWordsTierCurrentNode.AnnotationId).FirstOrDefault();
+                            //TODO: Get language from Word tier
                             AssociationNode speakerSpeechLanguage = associationTiersDict["Speaker-SpeechLanguage"].Where(x => x.AnnotationRef == speakerWordsTierCurrentNode.AnnotationId).FirstOrDefault();
                             AssociationNode speakerPartOfSpeech = associationTiersDict["Speaker-PartOfSpeech"].Where(x => x.AnnotationRef == speakerWordsTierCurrentNode.AnnotationId).FirstOrDefault();
                             speakerWordsList.Add(
@@ -209,7 +210,7 @@ namespace ELANFilesParseLibrary
                                     SpeakerWordsEnTranslation = (speakerWordsEnTranslationTierNode != null) ? speakerWordsEnTranslationTierNode.AnnotationValue : String.Empty,
                                     SpeakerWordsRuTranslation = (speakerWordsRuTranslationTierNode != null) ? speakerWordsRuTranslationTierNode.AnnotationValue : String.Empty,
                                     SpeakerWordsComments = (speakerWordsComments != null) ? speakerWordsComments.AnnotationValue : String.Empty,
-                                    SpeakerSpeechLanguage = (speakerSpeechLanguage != null) ? speakerSpeechLanguage.AnnotationValue : String.Empty,
+                                    SpeakerWordsLanguage = (speakerSpeechLanguage != null) ? speakerSpeechLanguage.AnnotationValue : String.Empty,
                                     SpeakerPartOfSpeech = (speakerPartOfSpeech != null) ? speakerPartOfSpeech.AnnotationValue : String.Empty
                                 }
                             );
