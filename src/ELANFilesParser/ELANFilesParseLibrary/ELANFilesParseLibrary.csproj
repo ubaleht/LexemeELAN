@@ -42,12 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnnotationsFragment.cs" />
+    <Compile Include="AnnotationsFragmentSty.cs" />
     <Compile Include="AssociationNode.cs" />
     <Compile Include="EAFParser.cs" />
+    <Compile Include="EAFParserSty.cs" />
     <Compile Include="InterviewerSpeech.cs" />
+    <Compile Include="InterviewerSpeechSty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpeakerSpeech.cs" />
+    <Compile Include="SpeakerSpeechSty.cs" />
     <Compile Include="SpeakerWord.cs" />
+    <Compile Include="SpeakerWordSty.cs" />
     <Compile Include="TimeRangeNode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

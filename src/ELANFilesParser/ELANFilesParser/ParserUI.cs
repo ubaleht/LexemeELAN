@@ -16,6 +16,8 @@ namespace ELANFilesParser
     {
         private EAFParser parser;
 
+        private EAFParserSty parserSty;
+
         public ParserUI()
         {
             InitializeComponent();
@@ -53,7 +55,7 @@ namespace ELANFilesParser
         private void parseButton_Click(object sender, EventArgs e)
         {
             //TODO - path
-            parser = new EAFParser(@"D:\Proj\Under-ResourcedLanguages\SIF\SiberianIngrianFinnish\annotations\KKM-34-003.eaf");
+            parser = new EAFParser(@"D:\Annotations\MAP-49-002.eaf");
             parser.Parse();
             
         }
@@ -62,6 +64,17 @@ namespace ELANFilesParser
         {
             ELANToMSSQLServer elanToMSSQLServer = new ELANToMSSQLServer();
             elanToMSSQLServer.SaveELANFileToDatabase(parser.AnnotationsFragments);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            parserSty = new EAFParserSty(@"D:\Annotations\NGA-45_2021-07-22_03.eaf");
+            parserSty.Parse();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

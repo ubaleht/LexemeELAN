@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.parseButton = new System.Windows.Forms.Button();
             this.saveToDatabaseButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openParseFileDialog
@@ -52,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 29);
+            this.label1.Location = new System.Drawing.Point(38, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
@@ -78,11 +80,33 @@
             this.saveToDatabaseButton.UseVisualStyleBackColor = true;
             this.saveToDatabaseButton.Click += new System.EventHandler(this.saveToDatabaseButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(146, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(146, 106);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ParserUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 188);
+            this.ClientSize = new System.Drawing.Size(349, 238);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.saveToDatabaseButton);
             this.Controls.Add(this.parseButton);
             this.Controls.Add(this.label1);
@@ -101,6 +125,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button parseButton;
         private System.Windows.Forms.Button saveToDatabaseButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

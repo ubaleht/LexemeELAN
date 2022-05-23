@@ -11,9 +11,12 @@ namespace ELANFilesParseLibrary
         private string speakerSpeechText;
         private int startTime;
         private int endTime;
+        //TODO: This field go to child class
         private List<SpeakerWord> speakerWords;
         private string speakerSpeechEnTranslation;
         private string speakerSpeechRuTranslation;
+        private string speakerSpeechLanguage;
+        private string speakerSpeechComments;
 
         public SpeakerSpeech()
         {
@@ -26,5 +29,7 @@ namespace ELANFilesParseLibrary
         public int EndTime { get => endTime; set => endTime = value; }
         public string SpeakerSpeechEnTranslation { get => speakerSpeechEnTranslation; set => speakerSpeechEnTranslation = value; }
         public string SpeakerSpeechRuTranslation { get => speakerSpeechRuTranslation; set => speakerSpeechRuTranslation = value; }
+        public string SpeakerSpeechComments { get => speakerSpeechComments; set => speakerSpeechComments = value; }
+        public string SpeakerSpeechLanguage { get => speakerSpeechLanguage; set => speakerSpeechLanguage = value; }
     }
 }
