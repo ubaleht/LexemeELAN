@@ -74,7 +74,8 @@ namespace ELANFilesParser
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            ELANToMSSQLServer elanToMSSQLServer = new ELANToMSSQLServer();
+            elanToMSSQLServer.SaveELANStyFileToDatabase(parserSty.AnnotationsFragments);
         }
     }
 }
