@@ -181,7 +181,7 @@ namespace ELANFilesParseLibrary
                     }
                 }
 
-                foreach (SpeakerSpeech speakerSpeechTierNode in speakerSpeechList)
+                foreach (SpeakerSpeechSty speakerSpeechTierNode in speakerSpeechList)
                 {
                     List<string> speakerSpeechTireKeys = timeOrderSectionDict.Where(x => x.Value >= speakerSpeechTierNode.StartTime && x.Value <= speakerSpeechTierNode.EndTime).Select(x => x.Key).ToList();
 
@@ -195,7 +195,7 @@ namespace ELANFilesParseLibrary
                         }
                     }
 
-                    List<SpeakerWord> speakerWordsList = new List<SpeakerWord>();
+                    List<SpeakerWordSty> speakerWordsList = new List<SpeakerWordSty>();
 
                     foreach (string speakerWordsTierNodeId in speakerWordsTierNodeIdList)
                     {
@@ -227,7 +227,7 @@ namespace ELANFilesParseLibrary
                             );
                         }
                     }
-                    speakerSpeechTierNode.SpeakerWords = speakerWordsList;
+                    speakerSpeechTierNode.SpeakerWordsSty = speakerWordsList;
                 }
 
                 annotationsFragments.Add(new AnnotationsFragmentSty()
